@@ -1,0 +1,64 @@
+theme = "dracula_at_night"
+
+[editor]
+color-modes = true
+bufferline = "multiple"
+line-number = "relative"
+auto-completion = true
+auto-format = true
+completion-replace = true
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+
+
+[editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "version-control",
+  "file-name",
+  "read-only-indicator",
+  "file-modification-indicator",
+  "total-line-numbers",
+]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+
+[keys.normal]
+C-s = ":w"
+C-a = ":reload-all"
+y = [":clipboard-yank", "yank"]
+C-v = [":clipboard-paste-before"]
+C-right = [":bn"]
+C-left = [":bp"]
+X = ["extend_line_up", "extend_to_line_bounds"]
+C-q = ":q"
+
+[keys.insert]
+C-s = [":w", "normal_mode"]
+C-v = [":clipboard-paste-before"]
+C-right = [":bn"]
+C-left = [":bp"]
+
+
+[keys.select]
+y = [":clipboard-yank", "yank"]
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+
+[editor.soft-wrap]
+enable = true
